@@ -9,7 +9,7 @@ should mount on boot the sync directory's partition (edit `/etc/fstab` or use GU
 The scripts were created from [README-Docker.md](README-Docker.md).
 
 ````bash
-docker run -dit --network=host \
+docker run -dit --restart=always --network=host \
     -v /media/tungdt/WindowsData/syncthing:/var/syncthing \
     -e STGUIADDRESS=127.0.0.1:8384 \
     --name syncthing syncthing/syncthing:1.23.3
